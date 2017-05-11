@@ -18,8 +18,10 @@
 
 import UIKit
 
+//: Constants and Variables
 var str = "Hello, playground"
 let hello = "Hola, qué tal"
+
 
 
 /*: Optionals can be nil or the number they store, if any. */
@@ -31,7 +33,6 @@ optionalInteger = 42
 /*: Reserved words can be used as variables or constants using `` */
 let `private` = "private word"
 var word = `private`
-
 
 /*: Printing strings can be achieved by "sum" or by ```` \() ```` */
 print(hello + " " + word)
@@ -57,7 +58,7 @@ let number = 6745
 let result = anotherNumber + number
 
 
-/*: ````typealias```` is a convenient way to refer to another type in a contextual way. */
+/*: `typealias` is a convenient way to refer to another type in a contextual way. */
 typealias AudioResolution = UInt16
 AudioResolution.min
 
@@ -94,7 +95,8 @@ if optional != nil {
     "It's nil"
 }
 
-/*: You can use optional binding to test for an unassigned value as well */
+/*: You can use optional binding to test for an unassigned value as well
+ */
 
 if let value = optional {
     "It's not nil!"
@@ -104,14 +106,15 @@ if let value = optional {
 }
 
 /*:
- You can also use implicitly unwrapped optionals. Value becomes accessible automatically once a value has been set
+ ✨✨✨✨You can also use implicitly unwrapped optionals. Value becomes accessible automatically once a value has been set
+ 1. In essence, It's an optional;
+ 2. However, U can use it like nonoptional vaue
  */
+var im: String! = "hi"
+//: This code below will entails an crash
+// im = nil
+let nonoptional: String = im
 
-let knownString: Int! = 10
-if knownString != nil {
-    "It's got a value"
-    knownString // No need for explicit unwrapping
-}
 
 assert(true == true, "True isn't equal to false")
 

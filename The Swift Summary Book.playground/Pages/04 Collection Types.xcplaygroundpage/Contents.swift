@@ -62,24 +62,55 @@ var reversedShoppingList: [String] = shoppingList.reversed()
 reversedShoppingList.removeLast() // Removes last item. Remove the first with removeFirst(). No returned value.
 reversedShoppingList.popLast() // Pops the last item, removing it from the array and also returning it. Note that if the array is empty, the returned value is nil.
 
-//: ## Dictionaries
+//: ## Sets
 
-var airports: [String: String] = ["JFK": "John F. Kennedy", "SCL": "Arturo Merino Benitez"]
-airports = ["JFK": "John F. Kennedy", "SCL": "Arturo Merino Benitez"] //Also valid
-
-airports["JFK"] = "New York"
-
-airports.updateValue("Los Angeles", forKey:"LAX") //Updates or creates the value. Returns optional w/ previous value
-
-if let airportName = airports["DUB"] { //Subscript always returns optional in case value is not set.
-    print("The name of the airport is \(airportName).")
-} else {
-    print("That airport is not in the airports dictionary.")
+//: The items in Set must comform to Hashable and Equatable protocol
+struct MyStruct {
+    let i: Int
 }
 
-airports["LAX"] = nil
-airports.removeValue(forKey: "LAX") //Both remove the key-value pair
+extension MyStruct: Hashable { // Hashable
+    public var hashValue: Int { get {return i} }
+}
 
+extension MyStruct: Equatable { // Equatable
+    public static func ==(lhs: MyStruct, rhs: MyStruct) -> Bool {
+        return lhs.i == rhs.i
+    }
+}
+
+var set: Set<MyStruct> = [ MyStruct(i: 1), MyStruct(i: 2) ]
+set.insert(MyStruct(i: 3))
+set.insert(MyStruct(i: 3))
+print("----")
+for item in set {
+    print(item)
+}
+print("---sorted---")
+for item in set.sorted(by: { $0.i < $1.i }) {
+    print(item)
+}
+
+
+//: ## Dictionaries
+
+var airports: [String: String] = ["Key1": "Value1", "Key2": "Value2"]
+airports["Key3"] = "Value3"
+
+//: updateValue return the old value. If old doesn't exist, return nil
+if let oldValue = airports.updateValue("Key4", forKey:"Value4") {
+    print("Old value is \(oldValue)")
+}
+print(airports)
+
+
+//: Set value to nil, will remove this (key, value)
+airports["Key1"] = nil // (key1, value1) was removed!
+print("====\(airports)")
+airports.removeValue(forKey: "Key2") // Also
+print("====\(airports)")
+
+//: Iterating a dictionary
 //Iterating over the whole dictionary
 for (airportCode, airportName) in airports {
     print("\(airportCode): \(airportName)")
@@ -93,12 +124,6 @@ for airportCode in airports.keys {
 for airportName in airports.values {
     print("Airport name: \(airportName)")
 }
-
-//Empty Dictionaries
-var numbers = [Int: String]()
-numbers = [:]     			  //Both do the same
-
-numbers[16] = "sixteen"
 
 
 //: ### NOTE

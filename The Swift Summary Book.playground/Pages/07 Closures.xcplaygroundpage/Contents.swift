@@ -97,11 +97,10 @@ var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
 let customerProvider = { customersInLine.remove(at: 0) }
 
 //: Traditional way
-func serve(customer customerProvider: () -> String) {
+func serve(_ customerProvider: () -> String) {
     print("Now serving \(customerProvider())!") //The closure is called here!
 }
-serve(customer: { customersInLine.remove(at: 0) } )
-
+serve() { customersInLine.remove(at: 0) }
 //: **@autoclosure** way
 func serve(customer customerProvider: @autoclosure () -> String) {
     print("Now serving \(customerProvider())!")

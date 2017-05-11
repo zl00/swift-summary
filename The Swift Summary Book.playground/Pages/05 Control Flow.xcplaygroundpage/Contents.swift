@@ -1,40 +1,36 @@
+/*:
+ [Previous](@previous) | [Next](@next)
+ ****
+ 
+ Copyright (c) 2016 Juan Antonio Karmy.
+ Licensed under MIT License
+ 
+ Official Apple documentation available at [Swift Language Reference](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
+ 
+ See Juan Antonio Karmy - [karmy.co](http://karmy.co) | [@jkarmy](http://twitter.com/jkarmy)
+ 
+ ****
+ */
 
-// |=------------------------------------------------------=|
-//  Copyright (c) 2016 Juan Antonio Karmy.
-//  Licensed under MIT License
-//
-//  See https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ for Swift Language Reference
-//
-//  See Juan Antonio Karmy - http://karmy.co | http://twitter.com/jkarmy
-//
-// |=------------------------------------------------------=|
 
-
-//Index is implicitly declared
-for index in 1...5 {
+//: # For-In Loop
+for index in 1...5 { // range
     print("Index is \(index)")
 }
 
-//In this case, we don't care about the value.
 for _ in 1..<6 {
     print("No value")
 }
 
-//Use tuples
-let dictionary = ["one": 1, "two": 2, "three": 3]
-for (numberName, numberValue) in dictionary {
-    print("\(numberName) is \(numberValue)")
-}
+//:# Repeat-While
+var i = 0
+repeat {
+    i += 1
+} while (i < 5)
 
-//Go through a string
-var char = "e"
-for char in "Yes".characters {
-    print("\(char)")
-}
+//: # Switch-Case
 
-//Switches
-
-// No need for break, and every case must have some code.
+//: No need for break, and every case must have some code.
 let someChar = "e"
 switch someChar {
 case "a", "e", "i", "o", "u":
@@ -43,11 +39,8 @@ default:
     print("\(someChar) is a consonant")
 }
 
-//There can also be range matching
-
+//:There can also be range matching
 let count = 3_000_000_000_000
-let countedThings = "stars"
-
 switch count {
 case 0...9:
     print("a few")
@@ -57,12 +50,10 @@ default:
     print("a lot of")
 }
 
-//Use tuples
-
+//:Use tuples
 let coord = (1,1)
-
 switch coord {
-case (0,0):
+case (0, 0):
     print("Origin")
 case (_, 0):
     print("x axis")
@@ -74,7 +65,7 @@ default:
     print("out of bounds")
 }
 
-//Value binding: Assign temp values to variables inside the cases.
+//:Value binding: Assign temp values to variables inside the cases.
 let anotherPoint = (0, 0)
 switch anotherPoint {
 case (let x, 0):
@@ -85,7 +76,7 @@ case let (z, w): //This acts as the default case. Since it is only assigning a t
     print("somewhere else at (\(z), \(w))")
 }
 
-// Bind both values, plus test a condition.
+//: Bind both values, plus test a condition.
 switch anotherPoint {
 case let (x, y) where x == y:
     print("x = y : \(x) = \(y)")
@@ -93,20 +84,11 @@ default:
     break
 }
 
-// The fallthrough line forces the switch statement to fall into the default case after a previous case.
+//: ✨✨✨The ```fallthrough``` line forces the switch statement to fall into the default case after a previous case.
 switch anotherPoint {
 case let (x, y) where x == y:
     print("x = y")
     fallthrough
 default:
     print(" are equal")
-}
-
-//Nesting while, for and switches can be confusing sometimes
-//Use labels to better use the break and continue statements
-
-master: while true {
-    loop: for rats in 1...5{
-        continue master
-    }
 }

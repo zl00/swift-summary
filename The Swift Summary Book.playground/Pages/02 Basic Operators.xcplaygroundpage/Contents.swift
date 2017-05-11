@@ -1,18 +1,5 @@
 
-// |=------------------------------------------------------=|
-//  Copyright (c) 2016 Juan Antonio Karmy.
-//  Licensed under MIT License
-//
-//  See https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ for Swift Language Reference
-//
-//  See Juan Antonio Karmy - http://karmy.co | http://twitter.com/jkarmy
-//
-// |=------------------------------------------------------=|
-
-
-//BASIC OPERATORS
-
-// Playground - noun: a place where people can play
+//: - BASIC OPERATORS
 
 import UIKit
 

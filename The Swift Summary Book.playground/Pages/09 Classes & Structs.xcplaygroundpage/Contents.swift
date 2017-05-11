@@ -12,7 +12,7 @@
 
 import UIKit
 
-/*
+/*:
  Classes and structures in Swift have many things in common. Both can:
  
  • Define properties to store values

@@ -13,30 +13,33 @@
  */
 import UIKit
 
-/*
+/*:
  There are instance methods and type (class) methods
  */
-
 struct Point {
     var x = 0.0, y = 0.0
     static var xy = 0.0
     
-    //This is a mutating method. Allows for modifying value types
+    // ``mutating`` Always, we think struct is a constant variable, so, if the method of struct wants to modify the properties, it must have mutating
     mutating func moveByX(deltaX: Double, y deltaY: Double) {
-        //Here, the properties will be replaced with new values, thanks to the mutating prefix
         x += deltaX
         y += deltaY
         
-        //Reassigning self is also possible because of the mutating prefix. Note that this is only possible for value types
         self = Point(x: x + deltaX, y: y + deltaY)
     }
     
-    //This is a type method.
-    static func unlockLevel(level: Double) {
-        if xy > level { xy = level }
+    // This is a type method.
+    static func typeMethod(level: Double) {
+        xy = level
     }
 }
+let constP = Point(x: 2, y: 2)
+//constP.moveByX(deltaX: 3, y: 3)
+var varP = Point(x: 2, y: 2)
+varP.moveByX(deltaX: 3, y: 3)
 
+
+//: Class
 class ViewController: UIViewController {
     
     var count = 0
@@ -62,5 +65,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
-
+let vc: ViewController = ViewController()
+vc.count = 1
+print(vc.count)
 

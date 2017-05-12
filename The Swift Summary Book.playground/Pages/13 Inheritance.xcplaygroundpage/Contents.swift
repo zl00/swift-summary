@@ -1,14 +1,16 @@
-
-// |=------------------------------------------------------=|
-//  Copyright (c) 2016 Juan Antonio Karmy.
-//  Licensed under MIT License
-//
-//  See https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/ for Swift Language Reference
-//
-//  See Juan Antonio Karmy - http://karmy.co | http://twitter.com/jkarmy
-//
-// |=------------------------------------------------------=|
-
+/*:
+ [Previous](@previous) | [Next](@next)
+ ****
+ 
+ Copyright (c) 2016 Juan Antonio Karmy.
+ Licensed under MIT License
+ 
+ Official Apple documentation available at [Swift Language Reference](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/)
+ 
+ See Juan Antonio Karmy - [karmy.co](http://karmy.co) | [@jkarmy](http://twitter.com/jkarmy)
+ 
+ ****
+ */
 
 import UIKit
 

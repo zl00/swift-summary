@@ -189,4 +189,47 @@ let t = Shape.triangle(3)
 print(t.simpleDescription())
 let r = Shape.rectangle(length: 4, height: 3)
 print(r.simpleDescription())
+
+
+//: ### enumerated()
+let myArray = ["a", "b", "c", "d", "e"]
+var arraySlice = myArray[2..<5]
+arraySlice[2] = "cc"
+for (offset, item) in arraySlice.enumerated() {
+    print("---\(offset), value:\(item)")
+}
+print(myArray)
+
+//: ### zip
+let a = [1, 2, 3, 4]
+let b = ["a", "b", "c", "d", "e"]
+let c = zip(a, b).map { $0 }
+print(c)
+
+
+
+//: ### ✨✨✨✨use zip not enumerated✨✨✨✨
+//: 1. handle different sizes of arrays
+//: 2. not care about whether the startIndex of array is 0
+let data = [1, 2, 3, 4]
+class VC {
+    var d: Int?
+}
+
+let originVCs = [VC(), VC(), VC()]
+let vcSlice = originVCs[1..<3]
+//: #### zip usage
+// usage 1
+zip(vcSlice, data).map { $0.0.d = $0.1 }
+vcSlice[1].d
+
+// usage 2
+for (vc, d) in zip(vcSlice, data) { vc.d = d*10 }
+vcSlice[1].d
+
+//: #### ✨tips: left, right✨
+for (left, right) in zip(data, data.dropFirst()) {
+    print(left, right)
+}
+
 //: [Next](@next)

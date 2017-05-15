@@ -231,5 +231,5 @@ vcSlice[1].d
 for (left, right) in zip(data, data.dropFirst()) {
     print(left, right)
 }
-
+ 
 //: [Next](@next)

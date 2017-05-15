@@ -92,6 +92,14 @@ for item in set.sorted(by: { $0.i < $1.i }) {
 }
 
 
+//: ### intersection & subtracting  &  union
+let s0 = Set(0...10)
+let s1 = Set(2..<3)
+let ss0 = s0.intersection(s1) // 交集
+let ss1 = s0.subtracting(s1) // s0中的元素不在s1中出现
+let s2 = Set(12..<13)
+let ss2 = s0.union(s2) // 并集
+
 //: ## Dictionaries
 
 var airports: [String: String] = ["Key1": "Value1", "Key2": "Value2"]

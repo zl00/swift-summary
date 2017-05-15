@@ -132,10 +132,10 @@ enum OnOffSwitch: Togglable {
     case Off, On
     mutating func toggle() {
         switch self {
-        case Off:
-            self = On
-        case On:
-            self = Off
+        case .Off:
+            self = .On
+        case .On:
+            self = .Off
         }
     }
 }
@@ -577,3 +577,13 @@ print(hamsters.textualDescription)
  If a conforming type satisfies the requirements for multiple constrained extensions that provide implementations
  for the same method or property, Swift will use the implementation corresponding to the most specialized constraints.
  */
+
+
+//: #### CustomStringConvertible
+class MyCustomType: CustomStringConvertible {
+    
+    var description: String { get { return "hello world" } }
+}
+
+print(MyCustomType())
+

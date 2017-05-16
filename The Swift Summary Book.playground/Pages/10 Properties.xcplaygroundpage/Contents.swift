@@ -48,7 +48,7 @@ struct FixedLengthRange {
 class ViewController {
     
     
-    //This property has observers for when the the value will and did set
+    // This property has observers for when the the value will and did set
     var propWithObserver: Int = 0 {
         willSet {
             print(newValue)
@@ -59,6 +59,16 @@ class ViewController {
         }
         //Note that if the didSet sets the value of the property, it doesn't call the setter again
     }
+    
+    // ✨✨✨How about append action of collection type✨✨✨
+    var arrays: Array<Int> = [1] {
+        didSet {
+            print("🌛append🌛 action to collection type!")
+        }
+    }
 }
 
+
+let vc = ViewController()
+vc.arrays.append(3)
 

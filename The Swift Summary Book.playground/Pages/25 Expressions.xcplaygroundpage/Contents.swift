@@ -13,4 +13,8 @@ import Foundation
 let c = SomeClass()
 print(#keyPath(SomeClass.someProperty))
 
+
+//: ### About Memory
+
+print("UInt(MemoryLayout<Int32>.size)  =  \(UInt(MemoryLayout<Int32>.size))")
 //: [Next](@next)

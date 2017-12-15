@@ -7,7 +7,7 @@ import UIKit
 
 //
 var xx: String
-xx = "2"
+xx = "4"
 print(xx)
 
 /*: ?? unwrap*/

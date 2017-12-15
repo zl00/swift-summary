@@ -10,6 +10,8 @@ var xx: String
 xx = "test-base-master-resolve-3"
 print(xx)
 
+"commit1"
+
 /*: ?? unwrap*/
 let nickName: String? = "SHA1"
 let fullName: String  = "John"

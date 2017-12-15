@@ -13,7 +13,7 @@ print(xx)
 print(xx)
 
 /*: ?? unwrap*/
-let nickName: String? = "SHA"
+let nickName: String? = "SHA1"
 let fullName: String  = "John"
 let informalGreeting = "Hi \(nickName ?? fullName)"
 

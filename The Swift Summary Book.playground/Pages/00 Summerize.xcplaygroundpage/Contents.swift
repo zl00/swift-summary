@@ -7,8 +7,10 @@ import UIKit
 
 //
 var xx: String
-xx = "test-dwfewfew-master-resolve-2"
+xx = "test-dwfewfew-master-resolve-re"
 print(xx)
+
+"commit2"
 
 /*: ?? unwrap*/
 let nickName: String? = "SHA1"

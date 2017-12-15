@@ -7,7 +7,7 @@ import UIKit
 
 //
 var xx: String
-xx = "test-dwfewfew-master-resolve-5"
+xx = "test-dwfewfew-master-resolve-re"
 print(xx)
 
 "commit2"

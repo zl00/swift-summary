@@ -7,11 +7,11 @@ import UIKit
 
 //
 var xx: String
-xx = "test-base-master-resolve-2"
+xx = "test-base-master-resolve-3"
 print(xx)
 
 /*: ?? unwrap*/
-let nickName: String? = "SHA"
+let nickName: String? = "SHA1"
 let fullName: String  = "John"
 let informalGreeting = "Hi \(nickName ?? fullName)"
 

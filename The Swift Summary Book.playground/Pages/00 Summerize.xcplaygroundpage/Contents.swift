@@ -7,7 +7,7 @@ import UIKit
 
 //
 var xx: String
-xx = "test-base-master-resolve-4"
+xx = "test-dwfewfew-master-resolve-4"
 print(xx)
 
 /*: ?? unwrap*/

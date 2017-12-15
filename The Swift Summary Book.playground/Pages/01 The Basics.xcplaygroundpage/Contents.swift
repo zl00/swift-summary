@@ -19,7 +19,7 @@
 import UIKit
 
 //: Constants and Variables
-var str = "Hello, playground"
+var str = "Hello, playground-2"
 let hello = "Hola, qué tal"
 
 
